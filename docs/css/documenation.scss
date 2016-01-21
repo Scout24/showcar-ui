@@ -91,7 +91,7 @@ pre {
 .example {
     border: 1px solid $black-30;
     border-radius: $form-border-radius;
-    padding: 20px 0.5em;
+    padding: 10px 0.5em;
     margin-top: 20px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -99,7 +99,7 @@ pre {
     &:before {
         content: 'Example:';
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         font-weight: bold;
         color: $black-70;
     }

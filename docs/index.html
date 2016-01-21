@@ -29,8 +29,14 @@
             replace(/</g, '&lt;').
                 replace(/>/g, '&gt;');
         }
-        function formatCode (code, target) {
-            document.querySelector(target).innerHTML = encodeEntities(code);
+        function formatCode (target) {
+            var elements = document.querySelectorAll(target);
+            for (i = 0; i < elements.length; i++) {
+                var content = elements[i].innerHTML;
+                if (content) {
+                    elements[i].innerHTML = encodeEntities(content.trim());
+                }
+            }
         }
     </script>
 </head>
@@ -102,10 +108,9 @@
         To use the variables in your scss code you just need to import the specific file based on your directory structure:
     </p>
 
-    <pre><code class="css">
+    <pre><code class="css js-format-code">
 @import "variables";
     </code></pre>
-
 
     <a name="variable-colors"></a>
     <h3>Colors</h3>
@@ -455,11 +460,9 @@
         <div class="sc-content-container">Your Content goes here</div>
         <div class="clearfix"></div>
     </div>
-    <pre><code class="html" id="code-content-container"></code></pre>
-    <script>
-        formatCode(`<div class="sc-content-container">...</div>`, '#code-content-container');
-    </script>
-
+    <pre><code class="html js-format-code">
+<div class="sc-content-container">...</div>
+    </code></pre>
 </div>
 <div>
     <a name="grid"></a>
@@ -586,9 +589,8 @@
             </div>
         </div>
     </div>
-    <pre><code class="html" id="code-grid"></code></pre>
-    <script>
-        formatCode(`<div class="sc-grid-row">
+    <pre><code class="html js-format-code">
+<div class="sc-grid-row">
     <div class="sc-grid-col-6">.sc-grid-col-6</div>
     <div class="sc-grid-col-6">.sc-grid-col-6</div>
 </div>
@@ -597,8 +599,8 @@
     <div class="sc-grid-col-3">.sc-grid-col-3</div>
     <div class="sc-grid-col-3">.sc-grid-col-3</div>
     <div class="sc-grid-col-3">.sc-grid-col-3</div>
-</div>`, '#code-grid');
-    </script>
+</div>
+    </code></pre>
 
     <h3>Responsive Grids</h3>
     <p>
@@ -672,15 +674,14 @@
             </div>
         </div>
     </div>
-    <pre><code class="html" id="code-grid-2"></code></pre>
-    <script>
-formatCode(`<div class="sc-grid-row">
+    <pre><code class="html js-format-code">
+<div class="sc-grid-row">
     <div class="sc-grid-col-3 sc-grid-col-s-12 sc-grid-col-m-12">...</div>
     <div class="sc-grid-col-3 sc-grid-col-s-6 sc-grid-col-m-4">...</div>
     <div class="sc-grid-col-3 sc-grid-col-s-6 sc-grid-col-m-4">...</div>
     <div class="sc-grid-col-3 sc-grid-col-s-12 sc-grid-col-m-4">...</div>
-</div>`, '#code-grid-2');
-    </script>
+</div>
+    </code></pre>
 </div>
 
 <div>
@@ -703,17 +704,15 @@ formatCode(`<div class="sc-grid-row">
         <img srcset="//placehold.it/1400x150" alt="My default image">
     </picture>
 
-    <pre><code class="html" id="responsive-images"></code></pre>
-    <script>
-        formatCode(`<picture>
+    <pre><code class="html js-format-code">
+<picture>
     <source srcset="//placehold.it/468x150" media="(max-width: 468px)">
     <source srcset="//placehold.it/780x150" media="(max-width: 780px)">
     <source srcset="//placehold.it/1024x150" media="(max-width: 1024px)">
     <source srcset="//placehold.it/1400x150">
     <img srcset="//placehold.it/1400x150" alt="My default image">
-</picture>`, '#responsive-images');
-    </script>
-
+</picture>
+    </code></pre>
 </div>
 
 <div>
@@ -741,17 +740,16 @@ formatCode(`<div class="sc-grid-row">
             <button class="sc-btn-ross-l sc-btn-block">.sc-btn-ross-l.sc-btn-block</button>
         </div>
     </div>
-    <pre><code class="html" id="code-buttons"></code></pre>
-    <script>
-        formatCode(`<button class="sc-btn-bob-m">.sc-btn-bob-m</button>
+    <pre><code class="html js-format-code">
+<button class="sc-btn-bob-m">.sc-btn-bob-m</button>
 <button class="sc-btn-ross-m">.sc-btn-ross-m</button>
 <button class="sc-btn-bob-l">.sc-btn-bob-l</button>
 <button class="sc-btn-ross-l">.sc-btn-ross-l</button>
 <button class="sc-btn-bob-m" disabled>disabled</button>
 <button class="sc-btn-ross-m" disabled>disabled</button>
 <button class="sc-btn-bob-m sc-btn-block">.sc-btn-bob-m.sc-btn-block</button>
-<button class="sc-btn-ross-l sc-btn-block">.sc-btn-ross-l.sc-btn-block</button>`, '#code-buttons');
-    </script>
+<button class="sc-btn-ross-l sc-btn-block">.sc-btn-ross-l.sc-btn-block</button>
+    </code></pre>
 </div>
 
 <div>
@@ -775,16 +773,14 @@ formatCode(`<div class="sc-grid-row">
         <p class="sc-font-silent">.sc-font-silent<br />Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
         <p class="sc-font-bold">.sc-font-bold<br />Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
     </div>
-    <pre><code class="html" id="code-typography"></code></pre>
-    <script>
-        formatCode(`<p class="sc-font-m">...</p>
+    <pre><code class="html js-format-code">
+<p class="sc-font-m">...</p>
 <p class="sc-font-s">...</p>
 <p class="sc-font-l">...</p>
 <p class="sc-font-xl">...</p>
 <p class="sc-font-silent">...</p>
 <p class="sc-font-bold">...</p>
-        `, '#code-typography');
-    </script>
+    </code></pre>
 
     <a name="links"></a>
     <h3>Links</h3>
@@ -796,11 +792,10 @@ formatCode(`<div class="sc-grid-row">
             <a class="sc-inline-link">Inline Link</a>
         </div>
     </div>
-    <pre><code class="html" id="code-links"></code></pre>
-    <script>
-        formatCode(`<a href="...">...</a>
-<a href="..." class="sc-inline-link">...</a>`,'#code-links');
-    </script>
+    <pre><code class="html js-format-code">
+<a href="...">...</a>
+<a href="..." class="sc-inline-link">...</a>
+    </code></pre>
 </div>
 <div>
     <a name="forms"></a>
@@ -817,16 +812,15 @@ formatCode(`<div class="sc-grid-row">
         <input type="text" placeholder=".sc-input .error" class="sc-input error">
         <textarea class="sc-input" placeholder="sc-input" readonly>textarea.sc-input</textarea>
     </div>
-    <pre><code class="html" id="code-inputs"></code></pre>
-    <script>
-        formatCode(`<input type="text" class="sc-input">
+    <pre><code class="html js-format-code">
+<input type="text" class="sc-input">
 <input type="text" class="sc-input sc-input-l">
 <input type="text" class="sc-input" disabled>
 <input type="text" class="sc-input info">
 <input type="text" class="sc-input success">
 <input type="text" class="sc-input error">
-<textarea class="sc-input">...</textarea>`, '#code-inputs');
-    </script>
+<textarea class="sc-input">...</textarea>
+    </code></pre>
 
     <a name="selects"></a>
     <h3>Select Boxes</h3>
@@ -845,9 +839,8 @@ formatCode(`<div class="sc-grid-row">
             <option>disabled</option>
         </select>
     </div>
-    <pre><code class="html" id="code-selects"></code></pre>
-    <script>
-        formatCode(`<select class="sc-input">
+    <pre><code class="html js-format-code">
+<select class="sc-input">
     <option>...</option>
 </select>
 
@@ -857,8 +850,8 @@ formatCode(`<div class="sc-grid-row">
 
 <select class="sc-input sc-input-l" disabled>
     ...
-</select>`, '#code-selects');
-    </script>
+</select>
+    </code></pre>
 
     <a name="radios"></a>
     <h3>Radio Buttons</h3>
@@ -884,9 +877,8 @@ formatCode(`<div class="sc-grid-row">
             <label for="as24-radio-6">Radio 3 (disabled)</label>
         </div>
     </div>
-    <pre><code class="html" id="code-radios"></code></pre>
-    <script>
-        formatCode(`<input class="sc-input" id="radio1" type="radio">
+    <pre><code class="html js-format-code">
+<input class="sc-input" id="radio1" type="radio">
 <label for="radio1">...</label>
 
 <input class="sc-input" id="radio2" type="radio" disabled>
@@ -896,8 +888,8 @@ formatCode(`<div class="sc-grid-row">
 <label for="radio3">...</label>
 
 <input class="sc-input sc-input-l" id="radio4" type="radio" disabled>
-<label for="radio4">...</label>`, '#code-radios');
-    </script>
+<label for="radio4">...</label>
+    </code></pre>
 
     <a name="checkboxes"></a>
     <h3>Checkboxes</h3>
@@ -917,9 +909,8 @@ formatCode(`<div class="sc-grid-row">
             <label for="as24-checkbox-4">Checkbox (disabled)</label>
         </div>
     </div>
-    <pre><code class="html" id="code-checkboxes"></code></pre>
-    <script>
-        formatCode(`<input class="sc-input" id="cb1" type="checkbox">
+    <pre><code class="html js-format-code">
+<input class="sc-input" id="cb1" type="checkbox">
 <label for="cb1">...</label>
 
 <input class="sc-input" id="cb2" type="checkbox" disabled>
@@ -929,8 +920,8 @@ formatCode(`<div class="sc-grid-row">
 <label for="cb3">...</label>
 
 <input class="sc-input sc-input-l" id="cb4" type="checkbox" disabled>
-<label for="cb4">...</label>`, '#code-checkboxes');
-    </script>
+<label for="cb4">...</label>
+    </code></pre>
 
     <a name="color-selector"></a>
     <h3>Color Selectors</h3>
@@ -969,9 +960,8 @@ formatCode(`<div class="sc-grid-row">
             <label for="as24-cb-cp-6">radio</label>
         </div>
     </div>
-    <pre><code class="html" id="code-color-selector"></code></pre>
-    <script>
-        formatCode(`<div class="sc-color-selector">
+    <pre><code class="html js-format-code">
+<div class="sc-color-selector">
     <input id="cs1" type="radio" name="cs1" class="sc-input red">
     <label for="cs1">red</label>
 
@@ -988,7 +978,7 @@ formatCode(`<div class="sc-grid-row">
         &.red {
             @include color-selector-color(#ff0000, #fff);
         }
-    -- gradient support --
+        -- gradient support --
         &.gold {
             @include color-selector-color(linear-gradient(brown, yellow, brown) gold);
         }
@@ -1006,8 +996,7 @@ formatCode(`<div class="sc-grid-row">
     <input id="..." class="sc-input" type="checkbox" name="...">
     <label for="...">...</label>
 </div>
-`, '#code-color-selector');
-    </script>
+    </code></pre>
 
     <a name="input-groups"></a>
     <h3>Input Groups</h3>
@@ -1042,9 +1031,8 @@ formatCode(`<div class="sc-grid-row">
             <label for="example-groups-3-4"><as24-icon type="emission-badge-4"></as24-icon></label>
         </div>
     </div>
-    <pre><code class="html" id="code-groups"></code></pre>
-    <script>
-        formatCode(`<div class="sc-input-group">
+    <pre><code class="html js-format-code">
+<div class="sc-input-group">
     <input class="sc-input" type="text">
     ...
 </div>
@@ -1059,8 +1047,8 @@ formatCode(`<div class="sc-grid-row">
     <input class="sc-input" id="radio" type="radio">
     <label for="radio"><as24-icon type="emission-badge-2"></as24-icon></label>
     ...
-</div>`, '#code-groups');
-    </script>
+</div>
+    </code></pre>
 </div>
 <div>
     <a name="utility"></a>
@@ -1080,13 +1068,12 @@ formatCode(`<div class="sc-grid-row">
             <div class="sc-pull-right"></div>
         </div>
     </div>
-    <pre><code class="html" id="code-floats"></code></pre>
-    <script>
-        formatCode(`<div class="sc-clearfix">
+    <pre><code class="html js-format-code">
+<div class="sc-clearfix">
     <div class="sc-pull-left">...</div>
     <div class="sc-pull-right">...</div>
-</div>`, '#code-floats');
-    </script>
+</div>
+    </code></pre>
 
     <a name="text-alignment"></a>
     <h3>Text alignment</h3>
@@ -1106,24 +1093,22 @@ formatCode(`<div class="sc-grid-row">
         <strong>Text without wrapping</strong>
         <p class="sc-text-nowrap">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
-    <pre><code class="html" id="code-text-alignment"></code></pre>
-    <script>
-        formatCode(`<p class="sc-text-left">...</p>
+    <pre><code class="html js-format-code">
+<p class="sc-text-left">...</p>
 <p class="sc-text-right">...</p>
 <p class="sc-text-center">...</p>
 <p class="sc-text-justify">...</p>
-<p class="sc-text-nowrap">...</p>`, '#code-text-alignment');
-    </script>
+<p class="sc-text-nowrap">...</p>
+    </code></pre>
 
     <a name="center-blocks"></a>
     <h3>Center content blocks</h3>
     <div class="example example-block-center">
         <div class="sc-block-center">.sc-block-center</div>
     </div>
-    <pre><code class="html" id="code-block-center"></code></pre>
-    <script>
-        formatCode(`<div class="sc-block-center">...</div>`, '#code-block-center');
-    </script>
+    <pre><code class="html js-format-code">
+<div class="sc-block-center">...</div>
+    </code></pre>
 
     <a name="horizontal-line"></a>
     <h3>Horizontal line</h3>
@@ -1133,10 +1118,9 @@ formatCode(`<div class="sc-grid-row">
         <hr>
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
-    <pre><code class="html" id="code-hr"></code></pre>
-    <script>
-        formatCode(`<hr>`, '#code-hr');
-    </script>
+    <pre><code class="html js-format-code">
+<hr>
+    </code></pre>
 
     <a name="ellipsis"></a>
     <h3>Ellipsis</h3>
@@ -1144,10 +1128,9 @@ formatCode(`<div class="sc-grid-row">
     <div class="example example-ellipsis">
         <div class="sc-ellipsis" title="My very long text">My very long text</div>
     </div>
-    <pre><code class="html" id="code-ellipsis"></code></pre>
-    <script>
-        formatCode(`<div class="sc-ellipsis" title="...">...</div>`, '#code-ellipsis');
-    </script>
+    <pre><code class="html js-format-code">
+<div class="sc-ellipsis" title="...">...</div>
+    </code></pre>
 
     <a name="visibility"></a>
     <h3>Visibility</h3>
@@ -1254,12 +1237,10 @@ formatCode(`<div class="sc-grid-row">
         <div class="sc-box-spacing">Box 2</div>
         <div class="sc-box-spacing">Box 3</div>
     </div>
-    <pre><code class="html" id="code-box-sizing"></code></pre>
-    <script>
-        formatCode(`<div class="sc-box-spacing">...</div>
+    <pre><code class="html js-format-code">
 <div class="sc-box-spacing">...</div>
-        `, '#code-box-sizing');
-    </script>
+<div class="sc-box-spacing">...</div>
+    </code></pre>
 </div>
 <div>
     <a name="components"></a>
@@ -1290,17 +1271,16 @@ formatCode(`<div class="sc-grid-row">
         </button>
     </div>
 
-    <pre><code class="html" id="code-collapse"></code></pre>
-    <script>
-        formatCode(`<button data-toggle="sc-collapse" data-target="#collapse">...</button>
+    <pre><code class="html js-format-code">
+<button data-toggle="sc-collapse" data-target="#collapse">...</button>
 <div id="collapse" class="sc-collapse">...</div>
 
 <button class="sc-collapse sc-collapse-target in" data-toggle="sc-collapse" data-target=".sc-collapse-target">Show</button>
 <div class="sc-collapse sc-collapse-target">
     ...
 </div>
-<button data-toggle="sc-collapse" data-target=".sc-collapse-target" class="sc-collapse sc-collapse-target">Hide</button>`, '#code-collapse');
-    </script>
+<button data-toggle="sc-collapse" data-target=".sc-collapse-target" class="sc-collapse sc-collapse-target">Hide</button>
+    </code></pre>
 
     <a name="breadcrumbs"></a>
     <h3>Breadcrumbs</h3>
@@ -1313,16 +1293,15 @@ formatCode(`<div class="sc-grid-row">
             </ul>
         </div>
     </div>
-    <pre><code class="html" id="code-breadcrumbs"></code></pre>
-    <script>
-        formatCode(`<div class="sc-breadcrumbs">
+    <pre><code class="html js-format-code">
+<div class="sc-breadcrumbs">
     <ul>
         <li><a href="#/url/to/home" data-breadcrumb="home">Home page</a></li>
         <li><a href="#/url/to/list" data-breadcrumb="list">List results</a></li>
         <li><a href="#/url/to/detail" data-breadcrumb="detail">Detail</a></li>
     </ul>
-</div>`, '#code-breadcrumbs');
-    </script>
+</div>
+    </code></pre>
 
     <a name="custom-dropdown"></a>
     <h3>Custom Dropdown</h3>
@@ -1407,9 +1386,8 @@ formatCode(`<div class="sc-grid-row">
             </div>
         </custom-dropdown>
     </div>
-    <pre><code class="html" id="code-custom-dropdown"></code></pre>
-    <script>
-        formatCode(`<label>Custom Dropdown</label>
+    <pre><code class="html js-format-code">
+<label>Custom Dropdown</label>
 <custom-dropdown checkboxgroup>
     <div>
         <p>All</p>
@@ -1430,14 +1408,14 @@ formatCode(`<div class="sc-grid-row">
         <input type="checkbox" id="myId"/>
         <label for="myId">
             <as24-icon type="..."></as24-icon>
-            <span>
-                ...
-            </span>
+    <span>
+        ...
+    </span>
         </label>
         ...
     </div>
-</custom-dropdown>`, '#code-custom-dropdown');
-    </script>
+</custom-dropdown>
+    </code></pre>
 
     <a name="sticky"></a>
     <h3>Sticky Element</h3>
@@ -1461,16 +1439,14 @@ formatCode(`<div class="sc-grid-row">
             <button class="sc-btn-bob-l">Sticky Button</button>
         </div>
     </div>
-    <pre><code class="html" id="code-sticky"></code></pre>
-    <script>
-        formatCode(`<div data-sticky-undock="myBtn"></div>
+    <pre><code class="html js-format-code">
+<div data-sticky-undock="myBtn"></div>
 ...
 <div data-sticky-dock="myBtn"></div>
 <div data-sticky="myBtn">
     <button class="sc-btn-bob-l">Sticky Button</button>
-</div>`, '#code-sticky');
-</script>
-
+</div>
+    </code></pre>
 
     <a name="rotating-arrow"></a>
     <h3>Rotating Arrow</h3>
@@ -1481,18 +1457,16 @@ formatCode(`<div class="sc-grid-row">
             <span data-toggle="arrow" data-target="#rotating-arrow"></span>
         </div>
     </div>
-    <pre><code class="html" id="code-rotating-arrow"></code></pre>
-    <script>
-        formatCode(`<div id="myId">
+    <pre><code class="html js-format-code">
+<div id="myId">
     Look at the arrow right of me! <span data-toggle="arrow" data-target="#myId"></span>
-</div>`, '#code-rotating-arrow');
-    </script>
+</div>
+    </code></pre>
 </div>
 
     <a name="pager"></a>
     <h3>Pager</h3>
     <div class="example example-custom-dropdown">
-
         <ul class="sc-pagination">
             <li class="previous-page">
                 <a class="disabled" href="">
@@ -1513,9 +1487,9 @@ formatCode(`<div class="sc-grid-row">
                 </a>
             </li>
         </ul>
-        <pre style="margin-top:20px;"><code class="html" id="code-pager"></code></pre>
-        <script>
-            formatCode(`<ul class="sc-pagination">
+    </div>
+    <pre><code class="html js-format-code">
+<ul class="sc-pagination">
     <li class="previous-page">
         <a class="disabled" href="">
             <as24-icon type="arrow"></as24-icon> Previous
@@ -1533,11 +1507,14 @@ formatCode(`<div class="sc-grid-row">
             Next <as24-icon type="arrow"></as24-icon>
         </a>
     </li>
-</ul>`, '#code-pager');
-        </script>
-    </div>
+</ul>
+    </code></pre>
 
-    <script src="../dist/showcar-ui.min.js"></script>
+
+    <script>
+        formatCode('.js-format-code');
+    </script>
+    <script src="../dist/showcar-ui.js"></script>
     <script src="js/pager.js"></script>
 </body>
 </html>
