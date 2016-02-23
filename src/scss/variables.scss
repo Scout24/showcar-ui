@@ -48,6 +48,9 @@ $color-tip-message: #e4eeff;
 $color-highlight-info: #33aadd;
 $color-error-text: #d51500;
 
+$enable-flex: true;
+$enable-grid-classes: true;
+
 // spacings
 // ----------------------------
 $XS: 4px;
@@ -78,22 +81,5 @@ $desktop: $viewportL;
 // ----------------------------
 $form-border-radius: 4px;
 
-// susy
-// ----------------------------
-$susy-grid-background: hide !default; // can be "show" as well
-$gutter-width: 16px;
-$grid-column-width: 77px;
-$grid-max-width: $gutter-width * 11 + $grid-column-width * 12;
-$side-ad-width: 160px;
-$gap-between-ad-and-grid: 10px;
-
-$susy: (
-        columns: 12,
-        global-box-sizing: border-box,
-        gutters: $gutter-width / $grid-column-width,
-        gutter-position: split,
-        container: $grid-max-width,
-        debug: (
-                image: $susy-grid-background,
-        )
-);
+// grid
+$grid-gutter-width: 20px;

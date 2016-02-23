@@ -1,58 +1,38 @@
 @import "../../../../src/scss/variables.scss";
+@import "../../../../src/scss/mixins/utils.scss";
 
-/* Fixes for showcar ui */
-.sc-navigation {
-    border: none;
-    & nav ul li {
-        vertical-align: middle;
-    }
-}
-
-/* Improvements for showcar ui */
-.sc-inline-submit-center {
-    width: 40%;
-}
-
-.sc-inline-submit {
-    margin: 0 auto;
-    input[type=button], input[type=submit] {
-        width: auto;
-    }
+body {
+  background-color: $black-20;
 }
 
 .sc-stripe {
-    background-color: white;
-    padding: $XL 0;
-    margin: $XL (-$XL);
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  background-color: $orange-40;
+  margin-left: 0 - $grid-gutter-width;
+  margin-right: 0 - $grid-gutter-width;
+  margin-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+  text-align: center;
+  @include clearfix();
 }
 
 .sc-stripe-transparent {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .sc-card {
-    background: white;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    padding-bottom: $XL;
-    height: 100%;
-}
+  border: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: $grid-gutter-width;
+  text-align: center;
+  height: 100%;
 
-.sc-card {
-    &.padding {
-        padding: $XL;
-    }
-    & > .description p {
-      max-width: 40%;
-    }
-}
+  &.padding {
+    padding: $grid-gutter-width;
+    text-align: justify;
+  }
 
-.sc-grid-row {
-    margin-bottom: $XL;
-    &:last-child {
-        margin-bottom: 0;
-    }
+  & > .description p {
+    max-width: 40%;
+  }
 }
 
 .sc-title {
@@ -63,58 +43,31 @@
   }
 }
 
+.sc-content {
+  padding: 4px $grid-gutter-width;
+}
+
 hr {
-    clear: both;
+  clear: both;
 }
 
 /*======================================*/
 
-@media(min-width: $viewportM) {
-    .upper, .lower {
-        padding: $XL;
-    }
-}
-@media(max-width: $viewportM) {
-    .upper, .lower {
-        padding: $L $M $L;
-    }
-}
-
-.upper, .lower {
-  border: 1px solid #8a8a8a;
-  background-color: #f8f8f8;
-}
-
-.upper {
-    border-width: 1px 1px 0 1px;
-}
-
-.lower {
-    border-width: 0 1px 1px 1px;
+@media(max-width: ($viewportM - 1)) {
+  body {
+    background-color: $blue-40;
+  }
+  .sc-card {
+    margin-left: 0 - $grid-gutter-width;
+    margin-right: 0 - $grid-gutter-width;
+    border-right: 0 none;
+    border-left: 0 none;
+    border-top: 0 none;
+  }
 }
 
 as24-icon[type="arrow"] svg {
-    transform: rotate(180deg);
-    height: .5em;
-    margin-left: $M;
-}
-
-as24-icon[type="t-online"] svg {
-    height: $XL;
-}
-
-.lower {
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-    &:after {
-        width: 100%;
-        height: 8px;
-        content: "";
-        position: absolute;
-        left: 0;
-        top: -10px;
-        border-radius: 90% / 8px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-    }
+  transform: rotate(180deg);
+  height: .5em;
+  margin-left: $grid-gutter-width;
 }
