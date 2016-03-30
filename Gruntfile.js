@@ -14,13 +14,13 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
-        webpack: loadConfig("webpack", "ui"),
-        uglify: loadConfig("uglify"),
-        sass: loadConfig("sass", "ui"),
-        copy: loadConfig("copy", "ui"),
+        webpack: loadConfig("webpack", moduleName),
+        uglify: loadConfig("uglify", moduleName),
+        sass: loadConfig("sass", moduleName),
+        copy: loadConfig("copy", moduleName),
         watch: loadConfig("watch"),
-        pleeease: loadConfig("pleeease"),
-        assemble: loadConfig("assemble", "ui"),
+        pleeease: loadConfig("pleeease", moduleName),
+        assemble: loadConfig("assemble", moduleName),
         selenium_standalone: loadConfig("selenium-standalone", 'local'),
         webdriver: loadConfig("webdriver")
     });
