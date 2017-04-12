@@ -22,6 +22,10 @@
         "pictures": "src/08-docs-info/extra-packages/pictures.md",
         "tracking": "src/08-docs-info/extra-packages/tracking.md",
         "ads": "src/08-docs-info/extra-packages/ads.md",
-        "storage": "src/08-docs-info/extra-packages/storage.md"
+        "storage": "src/08-docs-info/extra-packages/storage.md",
+        "videotron": "src/08-docs-info/extra-packages/videotron.md",
+        "jumbotron": "src/08-docs-info/extra-packages/jumbotron.md",
+        "introtext": "src/08-docs-info/extra-packages/introtext.md",
+        "socialbuttons": "src/08-docs-info/extra-packages/socialbuttons.md"
     }
 }
