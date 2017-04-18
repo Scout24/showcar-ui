@@ -11,7 +11,7 @@ showcar-ui is the pattern library that is used to build the frontend of AutoScou
 
 To install showcar-ui within your project use npm.
 
-    npm install git@github.com:AutoScout24/showcar-ui.git --save
+    npm install git+https://github.com/AutoScout24/showcar-ui.git --save
 
 ## How to build:
 
