@@ -8,6 +8,15 @@
         xhr.send(data);
     }
 
+    function getPagePath(pathname) {
+        var pathArray = pathname.split("/");
+        if(pathArray.includes("nl") || pathArray.includes("fr")) {
+            // include 2nd part of the path for Belgium
+            return pathArray.slice(1, 3).join("/");
+        }
+        return pathArray[1];
+    }
+
     window.onerror = function(errorMsg, sourceUrl, lineNumber, column, errorObj) {
         
         if (errorMsg.indexOf('Script error') > -1) {
@@ -21,7 +30,7 @@
         var data = {
             httpUri: location.href,
             httpReferrer: document.referrer,
-            pagePath: location.pathname.split('/')[1],
+            pagePath: getPagePath(location.pathname),
             jsSrc: sourceUrl || '',
             jsLine: lineNumber || '',
             jsColumn: column || '',
