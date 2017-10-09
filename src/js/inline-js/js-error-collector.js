@@ -9,10 +9,10 @@
     }
 
     function getPagePath(pathname) {
-        var pathArray = pathname.split("/");
-        if(pathArray.includes("nl") || pathArray.includes("fr")) {
+        var pathArray = pathname.split('/');
+        if(pathArray.includes('nl') || pathArray.includes('fr')) {
             // include 2nd part of the path for Belgium
-            return pathArray.slice(1, 3).join("/");
+            return pathArray.slice(1, 3).join('/');
         }
         return pathArray[1];
     }
