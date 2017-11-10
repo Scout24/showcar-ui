@@ -1,7 +1,21 @@
 import registerElement from '../../../07-utilities/helpers.js';
 
 export default function (tagName) {
-    function loadMap(el) {
+    let intersectionObserver;
+    if (window.IntersectionObserver) {
+        intersectionObserver = new IntersectionObserver(entries => { // eslint-disable-line
+            // If intersectionRatio is 0, the sentinel is out of view
+            // and we do not need to do anything.
+            entries.forEach(entry => {
+                if (entry.intersectionRatio <= 0) {
+                    return;
+                }
+                loadMap(entry.target);
+            });
+        });
+    }
+
+    const loadMap = (el) => {
         const publicKey = el.getAttribute('apikey');
         const address = el.getAttribute('query');
         const htmlTag = document.querySelector('html');
@@ -13,25 +27,23 @@ export default function (tagName) {
         map.setAttribute('allowfullscreen', true);
         map.setAttribute('title', 'google-map');
         el.appendChild(map);
-    }
+
+        if (window.IntersectionObserver) {
+            intersectionObserver.unobserve(el);
+        }
+    };
 
     function attachedCallback() {
         const sentinel = this;
 
-        window.addEventListener('load', function() {
+        if (window.IntersectionObserver) {
             intersectionObserver.observe(sentinel);
-        }, false);
-    }
-
-    var intersectionObserver = new IntersectionObserver(entries => { // eslint-disable-line
-        // If intersectionRatio is 0, the sentinel is out of view
-        // and we do not need to do anything.
-        if (entries[0].intersectionRatio <= 0) {
-            return;
+        } else {
+            window.addEventListener('load', function() {
+                loadMap(sentinel);
+            }, false);
         }
-
-        loadMap(entries[0].target);
-    });
+    }
 
     registerElement({
         attachedCallback,
