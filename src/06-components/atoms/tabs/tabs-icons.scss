@@ -28,7 +28,7 @@
 .sc-tab--with-icon {
   background-color: $white;
   height: 36px;
-  padding-top: 8px;
+  padding-top: $S;
   width: 25%;
   max-width: 120px;
   opacity: .9;
@@ -55,7 +55,7 @@
 .sc-tab--with-icon--active {
   opacity: 1;
   height: 45px;
-  padding-top: 16px;
+  padding-top: 11px;
   margin-bottom: 0;
 
   @include mqmin(510px) {

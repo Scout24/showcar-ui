@@ -48,7 +48,7 @@ font-size: 13px;
 var iconsList = document.querySelector('#as24-icons-list');
 window.showcarIconNames.forEach(function(name) {
 var item = document.createElement('li');
-item.innerHTML = '<as24-icon type="' + name + '"></as24-icon><p>' + name + '</p>';
+item.innerHTML = '<as24-icon type="' + name + '" title="' + name + '"></as24-icon><p>' + name + '</p>';
 iconsList.appendChild(item);
 });
 </script>
