@@ -1,0 +1,70 @@
+@import '../../../01-settings/variables';
+@import '../../../02-sass-tools/sass-mq';
+
+.sc-superhero {
+  background-color: $white;
+  @include mqmin($viewportM) {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: $XXXL;
+    display: flex;
+    min-height: 432px;
+  }
+
+  @include mqmin($viewportL) {
+    min-height: 430px;
+  }
+}
+
+.sc-superhero__imgs {
+  display: flex;
+  align-items: flex-end;
+  padding: $L;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vw*.46);
+
+  @include mqmin($viewportM) {
+    min-height: 0;
+    align-items: unset;
+    padding: 0;
+    display: block;
+    padding-bottom: $L;
+  }
+
+  img {
+    max-width: 100px;
+    display: block;
+
+    @include mqmin($viewportM) {
+      max-width: 170px;
+    }
+  }
+}
+
+.sc-superhero__content {
+  padding: $XXL $L $XXXL;
+
+  @include mqmin($viewportM) {
+    padding: 0;
+    width: calc(75% - #{$XXXL});
+  }
+
+  @include mqmin($viewportL) {
+    width: calc(50% - #{$XXXL});
+  }
+}
+
+.sc-superhero__title {
+  font-size: 24px;
+}
+
+.sc-superhero__content--light {
+  @include mqmin($viewportM) {
+    color: $white;
+  }
+}

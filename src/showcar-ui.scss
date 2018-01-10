@@ -41,19 +41,18 @@
 @import '06-components/molecules/notification/notification';
 @import '06-components/molecules/small-footer/small-footer';
 @import '06-components/molecules/small-header/small-header';
-@import '06-components/molecules/media-item/media-item';
-@import '06-components/molecules/article/article';
+@import '06-components/molecules/media-section/media-section';
+@import '06-components/molecules/content-teaser/content-teaser';
 @import '06-components/molecules/link-text-box/link-text-box';
+@import '06-components/molecules/anchor-list/anchor-list';
 
-@import '06-components/organisms/benefits-list/benefits-list';
+@import '06-components/organisms/benefit-group/benefit-group';
 @import '06-components/organisms/navigation/navigation';
 @import '06-components/organisms/pagination/pagination';
 @import '06-components/organisms/search-mask/search-mask';
 @import '06-components/organisms/spy-navigation/spy-navigation';
 @import '06-components/organisms/card-group/card-group';
 @import '06-components/organisms/teaser-external/teaser-external';
-@import '06-components/organisms/linked-catalog/linked-catalog';
-@import '06-components/organisms/jumbotron-item/jumbotron-item';
-@import '06-components/organisms/unordered-list/unordered-list';
+@import '06-components/organisms/superhero/superhero';
 
 @import '07-utilities/utils';

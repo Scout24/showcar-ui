@@ -1,0 +1,46 @@
+@import '../../../01-settings/variables';
+
+
+.sc-media-section {
+  display: flex;
+  flex-direction: column;
+
+  @include mqmin($viewportL) {
+    flex-direction: row;
+  }
+}
+
+.sc-media-section--reverse {
+  .sc-media-section__content {
+    @include mqmin($viewportL) {
+      order: 1;
+    }
+  }
+  .sc-media-section__pic {
+    @include mqmin($viewportL) {
+      order: 2;
+      margin-left: $XXXL;
+      margin-right: 0;
+    }
+  }
+}
+
+.sc-media-section__pic {
+  display: block;
+
+  @include mqmin($viewportL) {
+    min-width: 55%;
+    margin-right: $XXXL;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.sc-media-section__content {
+  width: 100%;
+  @include mqmin($viewportL) {
+    max-width: 45%;
+  }
+}

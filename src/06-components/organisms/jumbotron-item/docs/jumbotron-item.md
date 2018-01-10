@@ -1,3 +1,0 @@
- <h2>Jumbotron<span class="status in-progress">work in progress</span></h2>
-
- The Jumbotron enables the author to display a variety and combination of different elements (e.g. image, text, button) on the very top of the page. It's fully responsive and therefore covers all screensizes. The text is black as default (on S version it will always be black) but in case of dark pictures, you may want to use a white color instead for M/L sizes (when texts and background-pics overlap): put the class name `sc-jumbotron__content--light` on `sc-jumbotron__content` container (see the third example).
