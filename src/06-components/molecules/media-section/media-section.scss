@@ -12,11 +12,13 @@
 
 .sc-media-section--reverse {
   .sc-media-section__content {
+    order: 2;
     @include mqmin($viewportL) {
       order: 1;
     }
   }
   .sc-media-section__pic {
+    order: 1;
     @include mqmin($viewportL) {
       order: 2;
       margin-left: $XXXL;
