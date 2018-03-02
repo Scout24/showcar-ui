@@ -19,6 +19,12 @@ For building on your local machine install all npm packages first. Then you can 
 
     npm install
     gulp build
+    
+## How to run locally:
+
+You can use the gulp default command to run the build locally:
+
+    gulp
 
 ## How to include:
 
