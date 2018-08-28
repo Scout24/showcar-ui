@@ -16,22 +16,32 @@ export default function (tagName) {
             shown: false,
             indentTop: 8,
             content: this.querySelector('.sc-tooltip-content'),
-            timeoutID: 0
+            timeoutID: 0,
+            showEvent: this.getAttribute('show-event'),
+            hideEvent: this.getAttribute('hide-event'),
         };
 
-        tt.tooltip.addEventListener('mouseover', () => show(tt), false);
-        tt.tooltip.addEventListener('mousedown', () => show(tt), false);
-        tt.tooltip.addEventListener('touchstart', () => show(tt), false);
-        tt.tooltip.addEventListener('click', () => show(tt), false);
-        tt.tooltip.addEventListener('mouseleave', () => hide(tt), false);
+        if (tt.showEvent && tt.hideEvent) {
+            document.addEventListener(tt.showEvent, () => show(tt), false);
+        } else {
+            tt.tooltip.addEventListener('mouseover', () => show(tt), false);
+            tt.tooltip.addEventListener('mousedown', () => show(tt), false);
+            tt.tooltip.addEventListener('touchstart', () => show(tt), false);
+            tt.tooltip.addEventListener('click', () => show(tt), false);
+            tt.tooltip.addEventListener('mouseleave', () => hide(tt), false);
+        }
 
-        tt.content.addEventListener('mouseover', () => show(tt), false);
-        tt.content.addEventListener('mousedown', () => show(tt), false);
-        tt.content.addEventListener('touchstart', () => show(tt), false);
-        tt.content.addEventListener('click', () => show(tt), false);
-        tt.content.addEventListener('mouseleave', () => hide(tt), false);
+        if (tt.hideEvent && tt.showEvent) {
+            document.addEventListener(tt.hideEvent, () => hide(tt), false);
+        } else {
+            tt.content.addEventListener('mouseover', () => show(tt), false);
+            tt.content.addEventListener('mousedown', () => show(tt), false);
+            tt.content.addEventListener('touchstart', () => show(tt), false);
+            tt.content.addEventListener('click', () => show(tt), false);
+            tt.content.addEventListener('mouseleave', () => hide(tt), false);
 
-        document.addEventListener('touchstart', () => hide(tt), false);
+            document.addEventListener('touchstart', () => hide(tt), false);
+        }
     }
 
     function show(tt) {

@@ -1,6 +1,16 @@
-<p>That text needs to be explaned
-	<as24-tooltip class="sc-tooltip">
+<p>That text needs to be explained
+	<as24-tooltip class="sc-tooltip" id="test-hover-tooltip">
 		<as24-icon type="info" style="width: 16px;"></as24-icon>
 		<span class="sc-tooltip-content">Information in tooltip <a href="/">link</a></span>
 	</as24-tooltip>
+</p>
+<br>
+<p>This text has a custom triggered tooltip
+	<as24-tooltip class="sc-tooltip" id="test-event-tooltip" show-event="show-tooltip-event" hide-event="hide-tooltip-event">
+		<as24-icon type="heart" style="width: 16px;"></as24-icon>
+		<span class="sc-tooltip-content">Show up!</span>
+	</as24-tooltip>
+	<br><br>
+	<button id="tooltip-show" class="sc-btn-bob">click me to show it</button>
+	<button id="tooltip-hide" class="sc-btn-ross">click me to hide it</button>
 </p>
