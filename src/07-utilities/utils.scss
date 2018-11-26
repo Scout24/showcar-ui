@@ -71,7 +71,7 @@
 
 //s viewport
 .sc-hidden-at-s {
-  @include mqminmax($viewportS - 1, $viewportM - 1) {
+  @include mqminmax($viewportXS, $viewportM - 1) {
     display: none !important;
   }
 }
