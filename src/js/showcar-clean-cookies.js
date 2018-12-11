@@ -22,6 +22,7 @@ const whiteList = [
     'as24-survey-opt-out',
     '__utma',
     '__utmz',
+    '_utmz',
     'optimizelySegments',
     'optimizelyBuckets',
     'optimizelyPendingLogEvents',
