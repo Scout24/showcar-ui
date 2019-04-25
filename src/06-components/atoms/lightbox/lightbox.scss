@@ -1,5 +1,5 @@
-@import '../../../01-settings/variables';
-@import '../../../02-sass-tools/sass-mq';
+@import "../../../01-settings/variables";
+@import "../../../02-sass-tools/sass-mq";
 
 .sc-lightbox__container {
   display: none;
@@ -10,7 +10,7 @@
   border-radius: $form-border-radius;
   background-color: $white;
   padding: $XL 0;
-  z-index: 140; // overlay header
+  z-index: 5000001; // overlay header + huge index to be in front of the ads
   max-height: calc(100vh - 80px);
 
   @include mqmin(582px) {
@@ -59,7 +59,7 @@
   border: 1px solid $black-30;
   cursor: pointer;
   border-radius: $XS;
-  transition: border-color .2s;
+  transition: border-color 0.2s;
   z-index: 1;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .sc-lightbox__close svg {
-  transition: fill .2s;
+  transition: fill 0.2s;
   fill: $black-60;
   width: $M;
   height: $M;
@@ -90,9 +90,9 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  z-index: 139; // less than modal window by one
+  z-index: 5000000; // less than modal window by one + huge index to be in front of the ads
   opacity: 0;
-  transition: opacity .1s ease;
+  transition: opacity 0.1s ease;
 }
 
 .sc-lightbox__overlay--visible {
