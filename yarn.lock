@@ -2797,9 +2797,12 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-document-register-element@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-0.5.4.tgz#df6b57fbb8e141123e5f61acf382d6bb78c02bce"
+document-register-element@^1.13.2:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.13.3.tgz#81e44360a2e01ad0a56cf94bd1a7627e5cc2013e"
+  integrity sha512-hfggFwSF2bRJG2NLvzpMPLNOYaw3WC/cQ3ZWIl0zxiwfIimNaME53Mf6XFFVtQXpsAdCOf/Yw7tdQXIoSOvhTg==
+  dependencies:
+    lightercollective "^0.3.0"
 
 dom-serialize@^2.2.0:
   version "2.2.1"
@@ -5799,6 +5802,11 @@ liftoff@^2.1.0, liftoff@^2.5.0:
     object.map "^1.0.0"
     rechoir "^0.6.2"
     resolve "^1.1.7"
+
+lightercollective@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.3.0.tgz#1f07638642ec645d70bdb69ab2777676f35a28f0"
+  integrity sha512-RFOLSUVvwdK3xA0P8o6G7QGXLIyy1L2qv5caEI7zXN5ciaEjbAriRF182kbsoJ1S1TgvpyGcN485fMky6qxOPw==
 
 limiter@^1.0.5:
   version "1.1.4"

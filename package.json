@@ -52,7 +52,7 @@
   },
   "main": "src/js/showcar-ui.js",
   "dependencies": {
-    "document-register-element": "^0.5.4",
+    "document-register-element": "^1.13.2",
     "dom4": "^1.8.5",
     "es6-collections": "^0.5.6",
     "lazysizes": "^4.1.3",
