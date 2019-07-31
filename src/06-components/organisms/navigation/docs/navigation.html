@@ -5,6 +5,9 @@
     </div>
     <nav>
         <ul>
+            <li class="link-only">
+                <a href="http://google.de/" target="_blank">Link Without Subnav</a>
+            </li>
             <li>
                 <span class="title" tabindex="1">Menu 1</span>
                 <ul>
@@ -16,10 +19,35 @@
 
             <li>
                 <span class="title" tabindex="2">Menu 2</span>
+                <span class="subtitle">I am small text</span>
                 <ul>
                     <li><a href="#navigation">Menu 2 Link 1</a></li>
                     <li><a href="#navigation">Menu 2 Link 2</a></li>
                     <li><a href="#navigation">Menu 2 Link 3</a></li>
+                </ul>
+            </li>
+
+
+            <li class="left">
+                <span class="title" tabindex="2">Sub menu Left</span>
+                <span class="subtitle">You place me below top level link. I will be truncated</span>
+                <ul class="submenu">
+                    <li>
+                        <ul>
+                            <li class="subheadline">Left header</li>
+                            <li><a href="#navigation">Submenu 1 Link 1</a></li>
+                            <li><a href="#navigation">Submenu 1 Link 2</a></li>
+                            <li><a href="#navigation">Submenu 1 Link 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="subheadline">Right Header</li>
+                            <li><a href="#navigation">Submenu 1 Link 1</a></li>
+                            <li><a href="#navigation">Submenu 1 Link 2</a></li>
+                            <li><a href="#navigation">Submenu 1 Link 3</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
@@ -54,13 +82,18 @@
             </li>
         </ul>
 
-        <hr>
-
         <ul class="right">
             <li>
                 <span class="title" tabindex="4">My Menu</span>
+                <span class="subtitle">Just open me</span>
                 <ul>
                     <li><a href="#navigation">My Menu Link 1</a></li>
+                    <li><a href="#navigation">My Menu Link 2</a></li>
+                    <li><a href="#navigation">My Menu Link 3</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#navigation">My Menu Link 4</a></li>
+                    <li><a href="#navigation">My Menu Link 5</a></li>
+                    <li class="separator"></li>
                     <li>
                         <button class="sc-btn-ross sc-btn-block">Login</button>
                     </li>

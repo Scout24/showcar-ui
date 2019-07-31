@@ -63,16 +63,19 @@
   }
 
   nav {
+    z-index: 130;
     transition: max-height 0.5s ease-out;
     max-height: 0;
     overflow: hidden;
 
     & > ul {
+      margin-top: 13px;
       padding: $M $L $L $L;
       border-top: 1px solid $black-30;
     }
 
     li {
+      position: relative;
       margin-right: -20px;
       padding-right: 20px;
     }
@@ -92,7 +95,7 @@
 
       .subheadline {
         color: $black-60;
-        font-size: 0.75rem;
+        font-size: $M;
 
         &:hover {
           cursor: default;
@@ -126,6 +129,15 @@
         background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMC41IiBoZWlnaHQ9IjYuMjc2NjEzMiIgdmlld0JveD0iMCAwIDEwLjUgNi4yNzY2MTMyIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIGQ9Ik0gMC4wMDQzNjQ1OSwwLjAyODQ2Mzk3IDQuNTc4ODgzNCw0LjIxOTIwNzYgOS4xNTMyNTg5LDAuMDI4ODE5NzUiIHN0cm9rZS13aWR0aD0iMS45OTk2NzAzOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjY3IC43MTQpIiBzdHJva2U9IiM5NDk0OTQiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==') no-repeat center center;
         color: $orange-100;
       }
+    }
+
+    span.subtitle {
+      position: absolute;
+      top: 47px; // Could be adjusted. Position relative to wrapping <li>
+      height: $M + 2; // keep limited for hidden overflow
+      color: $black-60;
+      font-size: $M;
+      overflow-x: hidden;
     }
 
     /* stylelint-disable-next-line no-duplicate-selectors */
@@ -204,7 +216,7 @@
       display: inline-block;
     }
 
-    @media screen and (min-width: 923px) {
+    @media screen and (min-width: $viewportL) {
       .icon-auto24,
       as24-icon {
         width: 85px;
@@ -214,22 +226,88 @@
     }
   }
 
-  @media screen and (max-width: 923px) {
+  /* ... => $viewportL */
+  @media screen and (max-width: $viewportL) {
+  
     nav {
       .title {
         display: inline-block;
         width: 100%;
+      }
+
+      /* Currently subtitles not visible on small */
+      span.subtitle {
+        display: none;
+      }
+
+      /* top level a */
+      > ul > li > a,
+      /* top level spans */
+      li > span.title,
+      /* sublists */
+      li > ul {
+        padding-left: 10px;
+      }
+
+      > ul {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &:last-child {
+          padding-bottom: $L;
+        }
+
+        /* direct children on top level */
+        > li {
+          /* draw line between top level li */
+          &:before {
+            margin: 8px 0;
+            height: 1px;
+            line-height: 1px;
+            width: 100%;
+            font-size: 0;
+            display: block;
+            border-top: 1px solid #dcdcdc;
+            content: ' ';
+          }
+        }
+      }
+
+      /* Adjust icon opening submenu */
+      span.title:after {
+        margin-right: 16px;
+      }
+
+      /* increase padding for sublevel items */
+      ul.submenu a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      /* increase padding for sublevel headings */
+      li.subheadline {
+        padding: 5px;
       }
     }
 
     .right {
       right: 0;
 
+      & > li {
+        position: relative;
+      }
+
       li.open {
         ul {
           right: 0;
           left: auto;
         }
+      }
+
+      /* Works only on big screens */
+      li.separator {
+        display: none;
       }
 
       li {
@@ -245,7 +323,7 @@
   }
 }
 
-@media screen and (min-width: 923px) and (max-width: $viewportXL) {
+@media screen and (min-width: $viewportL) and (max-width: $viewportXL) {
   .sc-navigation nav ul li.open ul.submenu {
     white-space: normal;
   }
@@ -257,7 +335,8 @@
   }
 }
 
-@media screen and (min-width: 923px) {
+/* $viewportL => ... */
+@media screen and (min-width: $viewportL) {
   .sc-navigation {
     height: 70px;
     width: 100%;
@@ -327,6 +406,28 @@
           }
         }
 
+        /* Display only one link within li, clean padding taken by icon */
+        li.link-only {
+          padding: 24px;
+        }
+
+        /* Change direction of ul.submenu */
+        li.left {
+          ul.submenu {
+            right: 0;
+            left: auto;
+          }
+        }
+
+        /* Special empty li separator */
+        li.separator {
+          box-sizing: border-box;
+          height: 1px;
+          margin: 12px 0;
+          width: 209px;
+          border-top: 1px solid #dcdcdc;
+        }
+
         li.open {
           box-sizing: border-box;
           border: 1px solid $black-30;
@@ -367,6 +468,7 @@
             left: 0;
             margin-left: -1px;
             margin-right: -1px;
+            margin-top: -1px; /* remove double line*/
             padding: 12px 24px;
 
             li {

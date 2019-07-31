@@ -21,12 +21,12 @@
     ]
   },
   "scripts": {
-    "build": "gulp build",
-    "docs": "gulp docs:generate",
-    "docs:serve": "gulp docs:serve",
-    "docs:edit": "gulp docs:edit",
-    "docs:watch": "gulp docs:watch",
-    "test": "gulp test:travis"
+    "build": "./node_modules/.bin/gulp build",
+    "docs": "./node_modules/.bin/gulp docs:generate",
+    "docs:serve": "./node_modules/.bin/gulp docs:serve",
+    "docs:edit": "./node_modules/.bin/gulp docs:edit",
+    "docs:watch": "./node_modules/.bin/gulp docs:watch",
+    "test": "./node_modules/.bin/gulp test:travis"
   },
   "author": "AutoScout24 GmbH",
   "license": "MIT",
