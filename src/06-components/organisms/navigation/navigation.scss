@@ -69,7 +69,7 @@
     overflow: hidden;
 
     & > ul {
-      margin-top: 13px;
+      margin-top: $M;
       padding: $M $L $L $L;
       border-top: 1px solid $black-30;
     }
@@ -262,7 +262,7 @@
         > li {
           /* draw line between top level li */
           &:before {
-            margin: 8px 0;
+            margin: $S 0;
             height: 1px;
             line-height: 1px;
             width: 100%;
@@ -276,7 +276,7 @@
 
       /* Adjust icon opening submenu */
       span.title:after {
-        margin-right: 16px;
+        margin-right: $L;
       }
 
       /* increase padding for sublevel items */
@@ -423,7 +423,7 @@
         li.separator {
           box-sizing: border-box;
           height: 1px;
-          margin: 12px 0;
+          margin: $M 0;
           width: 209px;
           border-top: 1px solid #dcdcdc;
         }
