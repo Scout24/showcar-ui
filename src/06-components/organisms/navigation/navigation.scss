@@ -110,9 +110,22 @@
         }
       }
     }
+    li.open {
+      ul {
+        max-height: 2000px;
 
-    li.open ul {
-      max-height: 2000px;
+        &.submenu {
+          // [$breakpoint => $viewportXL] display submenu vertical
+          @media screen and (min-width: $breakpoint) and (max-width: $viewportXL) {
+            white-space: normal;
+          }
+
+          // [$viewportXL => ...] display submenu vertical
+          @media screen and (min-width: $viewportXL) {
+            white-space: nowrap;
+          }
+        }
+      }
     }
 
     li ul a {
@@ -325,18 +338,6 @@
     }
   }
 
-  // @media screen and (min-width: $breakpoint) and (max-width: $viewportXL) {
-  //   & nav ul li.open ul.submenu {
-  //     white-space: normal;
-  //   }
-  // }
-
-  @media screen and (min-width: $viewportXL) {
-    & nav ul li.open ul.submenu {
-      white-space: nowrap;
-    }
-  }
-
   /* $breakpoint=> ... */
   @media screen and (min-width: $breakpoint) {
     height: 70px;
@@ -475,7 +476,6 @@
           }
 
           ul.submenu {
-            white-space: normal;
             > li {
               ul {
                 position: static;
