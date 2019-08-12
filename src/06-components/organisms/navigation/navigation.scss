@@ -155,6 +155,8 @@
 
     span.subtitle {
       position: absolute;
+      left: 0;
+      padding-left: 24px;
       top: 47px; // Could be adjusted. Position relative to wrapping <li>
       height: $M + 2; // keep limited for hidden overflow
       color: $black-60;
