@@ -158,7 +158,7 @@
       left: 0;
       padding-left: 24px;
       top: 47px; // Could be adjusted. Position relative to wrapping <li>
-      height: $M + 2; // keep limited for hidden overflow
+      height: $M + 4; // keep limited for hidden overflow
       color: $black-60;
       font-size: $M;
       overflow-x: hidden;
