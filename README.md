@@ -49,6 +49,16 @@ Make sure to replace the @@ASSET_PATH string with the path to the JS/CSS file.
 
 You can check development state of the library on home, list and detail page with a parameter `?toguru=sc_develop%3dtrue`.
 
+## How to test fragments with togglea
+
+You can check any branch of the library on your page with parameter `?toguru=sc_develop%3dtest-branch` where `test-branch` is the name of the desired branch.
+
+Locally run 
+
+   docker-compose up
+
+and check `localhost:8080/test/showcar-ui-toggled-fragment.html?toguru=sc_develop%3dtest-branch` where `test-branch` is the name of the branch to test
+
 ## Additional information
 
 The showcar-ui library includes some libraries and polyfills:
