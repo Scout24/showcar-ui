@@ -50,7 +50,11 @@ const whiteList = [
     'as24_identity',
     'noauth',
     'random',
-    'as24ArticleType'
+    'as24ArticleType',
+    '5c3e5f30-4d66-4a27-931d-61b7f4905dedcconsent',
+    '5c3e5f30-4d66-4a27-931d-61b7f4905dedeuconsent',
+    '5c3e5f30-4d66-4a27-931d-61b7f4905dedfaktorChecksum',
+    '5c3e5f30-4d66-4a27-931d-61b7f4905dedfaktorId'
 ];
 
 const deleteCookieByName = function(cookie) {
