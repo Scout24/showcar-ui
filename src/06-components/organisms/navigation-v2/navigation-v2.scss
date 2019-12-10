@@ -3,6 +3,8 @@
 @import '../../../02-sass-tools/link';
 @import '../../../02-sass-tools/sass-mq.scss';
 
+$navigation-breakpoint: 923px;
+
 .sc-navigation-v2 {
   background-color: $white;
   -webkit-tap-highlight-color: transparent;
@@ -279,7 +281,7 @@
     }
   }
 
-  @media (min-width: 923px) {
+  @media (min-width: $navigation-breakpoint) {
     .open .submenu:not(.extended) {
       min-width: 165px;
     }
@@ -296,7 +298,7 @@
     }
   }
 
-  @media screen and (min-width: 923px) {
+  @media screen and (min-width: $navigation-breakpoint) {
     display: flex;
 
     .sc-btn-mobile-menu {
@@ -499,7 +501,7 @@
   }
 
   .hidden-on-mobile {
-    @include mqminmax(0, 923px - 1) {
+    @include mqminmax(0, $navigation-breakpoint - 1) {
       display: none !important;
     }
   }
