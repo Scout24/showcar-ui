@@ -157,6 +157,10 @@ $symbol-highlighted: $orange-100;
       text-decoration: none;
       padding: $S 20px;
       @include link(M, $variant: $black-120);
+
+      &:focus {
+        color: $symbol-highlighted;
+      }
     }
   }
 
@@ -204,6 +208,14 @@ $symbol-highlighted: $orange-100;
       height: 12px;
       background: url($flyout-arrow) no-repeat center center;
       color: $symbol-highlighted;
+    }
+
+    &:focus {
+      color: $symbol-highlighted;
+
+      &::after {
+        background-image: url($flyout-arrow-highlighted);
+      }
     }
   }
 
