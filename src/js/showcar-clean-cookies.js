@@ -54,7 +54,9 @@ const whiteList = [
     '5c3e5f30-4d66-4a27-931d-61b7f4905dedcconsent',
     '5c3e5f30-4d66-4a27-931d-61b7f4905dedeuconsent',
     '5c3e5f30-4d66-4a27-931d-61b7f4905dedfaktorChecksum',
-    '5c3e5f30-4d66-4a27-931d-61b7f4905dedfaktorId'
+    '5c3e5f30-4d66-4a27-931d-61b7f4905dedfaktorId',
+    'brand-variation',
+    'brand-opt-out'
 ];
 
 const deleteCookieByName = function(cookie) {
@@ -75,7 +77,7 @@ export const findUnneededCookies = (cookie) => {
         isNotWhitelisted = !regex.test(cookie);
         i++;
     }
-    
+
     return isNotWhitelisted;
 };
 
@@ -83,6 +85,6 @@ export default () => {
     const unneededCookies = document.cookie.split(';')
         .map(cookie => getCookieName(cookie))
         .filter(findUnneededCookies);
-    
+
     unneededCookies.forEach(deleteCookieByName);
 };
