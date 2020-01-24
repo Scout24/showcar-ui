@@ -1,0 +1,544 @@
+@import '../../../01-settings/variables';
+@import '../../../02-sass-tools/fonts';
+@import '../../../02-sass-tools/link';
+@import '../../../02-sass-tools/sass-mq.scss';
+
+$flyout-arrow: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMC41IiBoZWlnaHQ9IjYuMjc2NjEzMiIgdmlld0JveD0iMCAwIDEwLjUgNi4yNzY2MTMyIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIGQ9Ik0gMC4wMDQzNjQ1OSwwLjAyODQ2Mzk3IDQuNTc4ODgzNCw0LjIxOTIwNzYgOS4xNTMyNTg5LDAuMDI4ODE5NzUiIHN0cm9rZS13aWR0aD0iMS45OTk2NzAzOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjY3IC43MTQpIiBzdHJva2U9IiM5NDk0OTQiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==';
+$flyout-arrow-highlighted: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMC41IiBoZWlnaHQ9IjYuMjc2NjEzMiIgdmlld0JveD0iMCAwIDEwLjUgNi4yNzY2MTMyIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIGQ9Ik0gMC4wMDQzNjQ1OSwwLjAyODQ2Mzk3IDQuNTc4ODgzNCw0LjIxOTIwNzYgOS4xNTMyNTg5LDAuMDI4ODE5NzUiIHN0cm9rZS13aWR0aD0iMS45OTk2NzAzOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjY3IC43MTQpIiBzdHJva2U9IiNmZjc1MDAiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==';
+
+$symbol-highlighted: $orange-100;
+$header-height: 71px;
+
+// Dealer Team is using the styles from mixing because their header has different breakpoints
+@mixin sc-navigation-v2-mixin($breakpoint) {
+  background-color: $white;
+  -webkit-tap-highlight-color: transparent;
+  border-bottom: solid 1px $black-30;
+
+  a {
+    white-space: nowrap;
+  }
+
+  button {
+    &.sc-link,
+    &.sc-inline-link {
+      background-color: transparent;
+      border: none;
+      font-size: $L;
+    }
+  }
+
+  &.open {
+    .sc-btn-mobile-menu {
+      color: $symbol-highlighted;
+
+      span {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(3px, 5px);
+          background: $symbol-highlighted;
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(3px, -6px);
+          background: $symbol-highlighted;
+        }
+      }
+    }
+
+    nav {
+      max-height: 2200px;
+      transition: max-height 0.5s ease-in;
+    }
+  }
+
+  // Sandwich Menu Button
+  .sc-btn-mobile-menu {
+    position: absolute;
+    transition: 0.2s ease;
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+    padding: $S 0;
+    margin-top: 1px;
+    left: $L;
+    max-height: 36px; // to assure IE11 sizes
+
+    @include font(M);
+
+    span {
+      vertical-align: middle;
+      margin-right: $S;
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background-color: $black-60;
+      top: -2px;
+      transition: background-color 0.1s;
+      position: relative;
+
+      &::before,
+      &::after {
+        transition: 0.2s ease-in-out;
+        position: absolute;
+        background: $black-60;
+        content: '';
+        width: 20px;
+        height: 2px;
+        left: 0;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+      }
+    }
+  }
+
+  // Expandable Menu Items
+  .submenu {
+    padding: 0 0 7px 24px;
+    transition: 0.3s ease-out;
+    display: none;
+
+    &.visible-on-mobile {
+      display: block;
+    }
+  }
+
+  li.open .submenu {
+    display: block;
+  }
+
+  // Subheadline for Menu Items
+  .subheadline {
+    @include font(S, $silent: true);
+    padding: $XS;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .left,
+  .right {
+    padding: 0 $L;
+    border: none;
+  }
+
+  // Left Navigation Bar
+  .left {
+    /* direct children on top level */
+    > li {
+      /* draw line between top level li */
+      &::before {
+        border-top: 1px solid $black-30;
+      }
+      &::before,
+      &::after {
+        margin: 0 0 $S;
+        height: 1px;
+        line-height: 1px;
+        width: 100%;
+        font-size: 0;
+        display: block;
+        content: ' ';
+      }
+
+      > a {
+        padding: $S 10px;
+      }
+    }
+    /* draw line between top level li */
+    &::after {
+      margin: 0 0 $S;
+      height: 1px;
+      line-height: 1px;
+      width: 100%;
+      font-size: 0;
+      display: block;
+      border-top: 1px solid $black-30;
+      content: ' ';
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding: $S 20px;
+      @include link(M, $variant: $black-120);
+
+      &:focus {
+        color: $symbol-highlighted;
+      }
+    }
+  }
+
+  // Right Navigation Bar
+  .right {
+    padding-bottom: 10px;
+
+    .title {
+      display: none;
+    }
+
+    .submenu {
+      max-height: none;
+      padding-left: 0;
+    }
+
+    .myaccount {
+      padding-left: 10px;
+    }
+
+    .myaccount a:not(.sc-link):not(.button-with-subtitle) {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: $S 0;
+      @include link(M, $variant: $black-120);
+    }
+  }
+
+  // Menubar Item title
+  .title {
+    padding: $S 10px;
+    outline: 0;
+    position: relative;
+    text-align: left;
+
+    &::after {
+      content: '';
+      position: absolute;
+      outline: 0;
+      right: 0;
+      margin-top: 6px;
+      margin-right: $L;
+      width: 12px;
+      height: 12px;
+      background: url($flyout-arrow) no-repeat center center;
+      color: $symbol-highlighted;
+    }
+
+    &:focus {
+      color: $symbol-highlighted;
+
+      &::after {
+        background-image: url($flyout-arrow-highlighted);
+      }
+    }
+  }
+
+  li {
+    &:hover,
+    &.open {
+      .title {
+        &::after {
+          background-image: url($flyout-arrow-highlighted);
+        }
+      }
+    }
+
+    &.open {
+      ul {
+        max-height: 2000px;
+      }
+    }
+  }
+
+  /* Special empty li separator */
+  .separator {
+    box-sizing: border-box;
+    height: 1px;
+    margin: $M 0;
+    border-top: 1px solid $black-30;
+    display: block;
+  }
+
+  // Menubar Item subtitle
+  .subtitle {
+    display: none;
+  }
+
+  nav {
+    transition: max-height 0.5s ease-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .bar {
+    padding: 10px 0;
+    text-align: center;
+    height: 35px;
+    box-sizing: content-box;
+    position: relative;
+
+    .icon-auto24,
+    as24-icon {
+      width: 75px;
+      height: 35px;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+
+  /* Optional functionality */
+  .country-selector {
+    display: none;
+  }
+
+  /* Optional functionality */
+  .button-with-subtitle {
+    ~ span:first-of-type {
+      display: block;
+      font-size: 13px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      white-space: nowrap;
+
+      a {
+        display: inline;
+        font-size: 13px;
+        padding: 0;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint) {
+    .open .submenu:not(.extended) {
+      min-width: 165px;
+    }
+    .open .submenu.extended {
+      white-space: nowrap;
+
+      & > * {
+        max-width: 210px;
+        display: inline-block;
+        vertical-align: top;
+
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    display: flex;
+    height: $header-height;
+
+    .sc-btn-mobile-menu {
+      display: none;
+    }
+
+    .bar {
+      padding: $L;
+
+      .icon-auto24,
+      as24-icon {
+        width: 85px;
+        height: 39px;
+      }
+    }
+
+    .subheadline {
+      padding: $XS 0 $S 0;
+    }
+
+    .submenu {
+      &.visible-on-mobile {
+        display: none;
+      }
+
+      position: absolute;
+      transition: none;
+      max-height: 0;
+      background-color: $white;
+      /* top value has to be equivalant to the header's height - border size, to hide the border between header and submenu */
+      top: $header-height - 1px;
+      border: 1px solid $black-30;
+      left: -1px;
+      padding: $M $XXL;
+      overflow: hidden;
+
+      a {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .extended {
+        display: flex;
+      }
+    }
+
+    .left-flyout {
+      .submenu {
+        right: -1px;
+        left: auto;
+      }
+    }
+
+    li {
+      position: relative;
+      border: 1px solid $white;
+      border-width: 0 1px;
+
+      &.open {
+        overflow: visible;
+        border: 1px solid $black-30;
+        border-width: 0 1px;
+
+        &::after {
+          display: block;
+          content: '';
+          height: 10px;
+          background-color: $white;
+          width: 100%;
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+        }
+
+        .submenu {
+          transition: max-height 1s ease-out;
+          max-height: 1000px;
+        }
+      }
+    }
+
+    .subtitle {
+      @include font(S, $silent: true);
+
+      display: inline-block;
+      position: absolute;
+      padding-left: 11px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      height: 16px;
+      margin-top: -8px;
+      max-width: 150px;
+    }
+
+    .title {
+      padding-right: 18px;
+
+      &::after {
+        margin-right: 0;
+      }
+    }
+
+    .right {
+      .submenu {
+        padding-left: $XXL;
+      }
+
+      .submenu--login {
+        min-width: 258px;
+      }
+
+      .title {
+        display: block;
+      }
+    }
+
+    /* Remove line between top level li */
+    .left {
+      &::after {
+        display: none;
+      }
+
+      > li:not(.open)::after {
+        display: none;
+      }
+
+      > li {
+        &::before {
+          display: none;
+        }
+
+        > a {
+          padding-bottom: $S;
+          line-height: normal;
+        }
+      }
+    }
+
+    .left,
+    .right {
+      padding: 0;
+      display: flex;
+
+      > li {
+        padding: $L;
+        padding-left: $M;
+        padding-right: $M;
+      }
+    }
+
+    nav {
+      max-height: none;
+      display: flex;
+      overflow: visible;
+      justify-content: space-between;
+      flex-basis: 100%;
+      z-index: 130;
+    }
+
+    /* Optional functionality */
+    .button-with-subtitle {
+      > a {
+        min-width: 200px;
+      }
+
+      span {
+        padding-top: $S;
+      }
+    }
+
+    /* Optional functionality */
+    li.country-selector {
+      display: list-item;
+
+      .title {
+        padding-top: 9px;
+        padding-bottom: 0;
+
+        &::after {
+          top: 8px;
+        }
+      }
+
+      as24-icon {
+        width: 21px;
+        margin-top: 2px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        @include link(M, $variant: $black-120);
+        padding: 8px 0;
+
+        span {
+          margin-left: $M;
+          line-height: 1;
+        }
+
+        ~ span ~ a {
+          padding: 4px 0;
+        }
+      }
+    }
+  }
+
+  .hidden-on-mobile {
+    @include mqminmax(0, $breakpoint - 1) {
+      display: none !important;
+    }
+  }
+}
