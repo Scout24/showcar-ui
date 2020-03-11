@@ -66,6 +66,9 @@ const whiteList = [
 ];
 
 const deleteCookieByName = function(cookie) {
+    const domain = window.location.hostname.replace(/.*autoscout24\./, '.autoscout24.');
+    // we do it twice because some cookies are set to www.autoscout24.tld and some to .autoscout24.tld domains
+    document.cookie = cookie + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=' + domain;
     document.cookie = cookie + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
