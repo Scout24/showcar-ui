@@ -62,7 +62,8 @@ const whiteList = [
     'brand-pageview-counter',
     'page-views-feed',
     'last-search-feed',
-    'home-feed-bucket'
+    'home-feed-bucket',
+    'consentForAds'
 ];
 
 const deleteCookieByName = function(cookie) {
