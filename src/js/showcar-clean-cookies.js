@@ -6,6 +6,7 @@ const whiteList = [
     '_gat',
     'AMP_TOKEN',
     'as24AutoAboLike2Drive',
+    'as24AutoAboMobileAppView',
     'as24-gtmSearchCrit',
     'as24Visitor',
     'culture',
