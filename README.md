@@ -91,11 +91,11 @@ The showcar-ui library includes some libraries and polyfills:
 
 ### showcar-storage
 
-You can access the Stroage API via the global `Storage` object. For further information see the documentation under https://github.com/Scout24/showcar-storage
+You can access the Stroage API via the global `Storage` object. For further information see the documentation under https://github.com/AutoScout24/showcar-storage
 
 ### showcar-icons
 
-You can use all the icons defined by showcar-icons with the custom `<as24-icon>` tag. For further information see the documentation under https://github.com/Scout24/showcar-icons
+You can use all the icons defined by showcar-icons with the custom `<as24-icon>` tag. For further information see the documentation under https://github.com/AutoScout24/showcar-icons
 
 ### Zepto
 
@@ -104,7 +104,7 @@ For a detailed usage guide, have a look at http://zeptojs.com/
 
 ## How to use:
 
-for the use of the library have a look at the [documentation](https://scout24.github.io/showcar-ui/).
+for the use of the library have a look at the [documentation](https://autoscout24.github.io/showcar-ui/).
 
 ## How to contribute:
 
