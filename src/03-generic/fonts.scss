@@ -84,16 +84,16 @@ h5.sc-font {
   font-family: 'Make It Sans';
   font-weight: normal;
   font-display: swap;
-  src: url('https://www.autoscout24.de/assets/external/as24-fonts/make-it-sans-regular.v1.woff2')
-    format('woff2'), url('https://www.autoscout24.de/assets/external/as24-fonts/make-it-sans-regular.v1.ttf')
+  src: url('/assets/external/as24-fonts/make-it-sans-regular.v1.woff2')
+    format('woff2'), url('/assets/external/as24-fonts/make-it-sans-regular.v1.ttf')
     format('truetype');
 }
 @font-face {
   font-family: 'Make It Sans';
   font-weight: bold;
   font-display: swap;
-  src: url('https://www.autoscout24.de/assets/external/as24-fonts/make-it-sans-bold.v1.woff2')
-    format('woff2'), url('https://www.autoscout24.de/assets/external/as24-fonts/make-it-sans-bold.v1.ttf')
+  src: url('/assets/external/as24-fonts/make-it-sans-bold.v1.woff2')
+    format('woff2'), url('/assets/external/as24-fonts/make-it-sans-bold.v1.ttf')
     format('truetype');
 }
 
