@@ -36,7 +36,6 @@ const whiteList = [
     '_gat_ALL',
     'optimizelyRedirectData',
     'optimizelyReferrer',
-    'showTsm',
     'PLAY_SESSION',
     'gaid',
     'asvid',
