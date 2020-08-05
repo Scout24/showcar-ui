@@ -9,7 +9,6 @@ const whiteList = [
     'as24AutoAboMobileAppView',
     'as24Visitor',
     'culture',
-    'testmode',
     'toguru',
     'User',
     'cmpatt',
