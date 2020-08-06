@@ -12,20 +12,6 @@ function js() {
         .pipe(gulp.dest(destination));
 }
 
-function icons() {
-    return gulp.src('src/js/showcar-icons.js')
-        .pipe(named())
-        .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest(destination));
-}
-
-function tracking() {
-    return gulp.src('src/js/showcar-tracking.js')
-        .pipe(named())
-        .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest(destination));
-}
-
 function scss() {
     const sourcemaps = require('gulp-sourcemaps');
     const sass = require('gulp-sass');
@@ -107,7 +93,7 @@ gulp.task('copy:fragments', done => {
     done();
 });
 
-const compileJs = gulp.series(jsLinter, gulp.series(js, icons, tracking));
+const compileJs = gulp.series(jsLinter, js);
 const compileCss = gulp.series(cssLinter, scss);
 
 const build = gulp.series(compileJs, compileCss, 'copy:fragments', 'replace');
