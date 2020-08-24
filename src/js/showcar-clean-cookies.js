@@ -41,15 +41,15 @@ const whiteList = [
     'noauth',
     'random',
     'as24ArticleType',
-    '0d1d0abe-8984-4629-b696-ae425affff05cconsent',
-    '0d1d0abe-8984-4629-b696-ae425affff05euconsent',
-    '0d1d0abe-8984-4629-b696-ae425affff05faktorChecksum',
-    '0d1d0abe-8984-4629-b696-ae425affff05faktorId',
     'page-views-feed',
     'last-search-feed',
     'home-feed-bucket',
     'home-feed-location',
     'acExperiment',
+    'cconsent-v2',
+    'euconsent-v2',
+    'addtl_consent',
+    'gdpr-',
 ];
 
 const deleteCookieByName = function(cookie) {
