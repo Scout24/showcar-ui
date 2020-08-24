@@ -50,6 +50,7 @@ const whiteList = [
     'euconsent-v2',
     'addtl_consent',
     'gdpr-',
+    'geo-location',
 ];
 
 const deleteCookieByName = function(cookie) {
