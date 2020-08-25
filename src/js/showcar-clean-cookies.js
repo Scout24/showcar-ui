@@ -51,6 +51,9 @@ const whiteList = [
     'addtl_consent',
     'gdpr-',
     'geo-location',
+    'sso',
+    'group',
+    '.+\\.as24ident',
 ];
 
 const deleteCookieByName = function(cookie) {
