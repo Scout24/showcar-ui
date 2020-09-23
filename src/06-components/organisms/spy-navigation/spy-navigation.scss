@@ -4,7 +4,7 @@
 @import '../../../02-sass-tools/rotating-arrow';
 
 $spy-height: 55px;
-$flyout-arrow-highlighted: "data:image/svg+xml,%3Csvg version='1.1' id='Ebene_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%231A72E8stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st1%7Bfill:none;stroke:%231A72E8stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st2%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%231A72E8%7D .st3%7Bfill:%231A72E8%7D .st4%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%231A72E8stroke:%231A72E8stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st5%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23C6C6C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st6%7Bfill:none;stroke:%23C6C6C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st7%7Bfill:none;stroke:%231A72E8stroke-width:2;stroke-linecap:round;stroke-linejoin:round;%7D .st8%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%2395C11F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st9%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23E30613;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cpath class='st3' d='M12,18c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-8,8C12.5,17.9,12.3,18,12,18z'/%3E%3C/svg%3E";
+$flyout-arrow-highlighted: "data:image/svg+xml,%3Csvg version='1.1' id='Ebene_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23083b78stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st1%7Bfill:none;stroke:%23083b78stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st2%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23083b78%7D .st3%7Bfill:%23083b78%7D .st4%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23083b78stroke:%23083b78stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st5%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23C6C6C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st6%7Bfill:none;stroke:%23C6C6C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st7%7Bfill:none;stroke:%23083b78stroke-width:2;stroke-linecap:round;stroke-linejoin:round;%7D .st8%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%2395C11F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st9%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23E30613;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cpath class='st3' d='M12,18c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-8,8C12.5,17.9,12.3,18,12,18z'/%3E%3C/svg%3E";
 
 @mixin visibleOnML {
   opacity: 1;
@@ -111,7 +111,7 @@ $flyout-arrow-highlighted: "data:image/svg+xml,%3Csvg version='1.1' id='Ebene_1'
     z-index: 21;
 
     &:before {
-      box-shadow: 0 3px 6px -2px rgba(0, 0, 0, .15);
+      box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.15);
     }
 
     #{$nav}__links {
@@ -135,7 +135,7 @@ $flyout-arrow-highlighted: "data:image/svg+xml,%3Csvg version='1.1' id='Ebene_1'
     top: 0;
     right: 0;
     height: $spy-height;
-    padding: $L $L #{$M+1};
+    padding: $L $L #{$M + 1};
 
     @include mqmax(#{$viewportM - 1}) {
       width: $spy-height;
@@ -194,7 +194,7 @@ $flyout-arrow-highlighted: "data:image/svg+xml,%3Csvg version='1.1' id='Ebene_1'
     position: absolute;
     padding: 12px $L 12px;
     border-bottom: 2px solid transparent;
-    transition: color .2s ease-in;
+    transition: color 0.2s ease-in;
     background: white;
     top: 100%;
     width: 100%;

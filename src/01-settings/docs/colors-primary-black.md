@@ -1,4 +1,4 @@
-<h2>Colors Primary Black<span class="status approved">Approved</span></h2>
+<h2>Greyscale<span class="status approved">Approved</span></h2>
 
 <div class="ndpl-component__colors ndpl-cf">
     <div class="ndpl-component__color-container">
@@ -14,18 +14,6 @@
         </div>
       </div>
     </div><div class="ndpl-component__color-container">
-      <div class="ndpl-component__color" style="background-color: rgb(76, 76, 76);">
-        <div>
-          #4c4c4c<br>rgb(76, 76, 76)<br>$black-90
-        </div>
-      </div>
-    </div><div class="ndpl-component__color-container">
-      <div class="ndpl-component__color" style="background-color: rgb(100, 100, 100);">
-        <div>
-          #646464<br>rgb(100, 100, 100)<br>$black-80
-        </div>
-      </div>
-    </div><div class="ndpl-component__color-container">
       <div class="ndpl-component__color" style="background-color: rgb(124, 124, 124);">
         <div>
           #7c7c7c<br>rgb(124, 124, 124)<br>$black-70
@@ -35,18 +23,6 @@
       <div class="ndpl-component__color" style="background-color: rgb(148, 148, 148);">
         <div>
           #949494<br>rgb(148, 148, 148)<br>$black-60
-        </div>
-      </div>
-    </div><div class="ndpl-component__color-container">
-      <div class="ndpl-component__color" style="background-color: rgb(172, 172, 172);">
-        <div>
-          #acacac<br>rgb(172, 172, 172)<br>$black-50
-        </div>
-      </div>
-    </div><div class="ndpl-component__color-container">
-      <div class="ndpl-component__color" style="background-color: rgb(196, 196, 196);">
-        <div>
-          #c4c4c4<br>rgb(196, 196, 196)<br>$black-40
         </div>
       </div>
     </div><div class="ndpl-component__color-container">

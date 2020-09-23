@@ -2,6 +2,25 @@
 // ----------------------------
 $white: #fff;
 
+$yellow-100: #f5f200;
+$yellow-60: #f9f766;
+
+$blue-160: #083b78;
+$blue-120: #0c4f90;
+$blue-100: #1166a8;
+
+$success-100: #00d0b2;
+$success-20: #ccffe2;
+
+$warning-100: #f2ca26;
+$warning-20: #fef9d3;
+
+$error-100: #e74b3c;
+$error-20: #fde7d8;
+
+$info-100: #237fff;
+$info-20: #d3ecff;
+
 $black-120: #000;
 $black-100: #333;
 $black-90: #4c4c4c;
@@ -13,7 +32,6 @@ $black-40: #c4c4c4;
 $black-30: #dcdcdc;
 $black-20: #f4f4f4;
 
-$blue-100: #003468;
 $blue-90: #1e4c7a;
 $blue-80: #3d648c;
 $blue-70: #5b7c9e;
@@ -39,12 +57,12 @@ $orange-30: #ffe3cc;
 $orange-20: #fff1e5;
 
 $yellow-90: #c4c100;
-$yellow-50: #fefde5; 
-$yellow: #F5F200;
+$yellow-50: #fefde5;
+$yellow: #f5f200;
 
-$google-blue: #1A72E8;
-$google-blue-90: #145bb9;
-$google-blue-50: #bad4f8;
+$google-blue: #083b78;
+$google-blue-90: #0c4f90;
+$google-blue-50: #1166a8;
 
 $color-link: $google-blue;
 $color-link-hover: $google-blue-90;
@@ -81,7 +99,7 @@ $body-red: $color-error;
 $body-violet: #991289;
 $body-blue: #0059b2;
 $body-green: #38a614;
-$body-dark-sky-blue: #33AADD;
+$body-dark-sky-blue: #33aadd;
 
 $body-other: url('data:image/svg+xml;base64,PHN2ZyBpZD0iRWJlbmVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHN0eWxlPjwhW0NEQVRBWw0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojQzZDNkM2O3N0cm9rZS1taXRlcmxpbWl0OjEwO30NCl1dPjwvc3R5bGU+PHBhdGggZD0iTTAgMGgzMHYzMEgweiIvPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0tNDAgNDBsNTAtNTBNLTMwIDQwbDUwLTUwTS0yMCA0MGw1MC01ME0tMTAgNDBsNTAtNTBNMCA0MGw1MC01ME0xMCA0MGw1MC01ME0yMCA0MGw1MC01MCIvPjwvc3ZnPg==');
 
@@ -137,5 +155,5 @@ $susy: (
   container: $grid-max-width,
   debug: (
     image: $susy-grid-background,
-  )
+  ),
 );
