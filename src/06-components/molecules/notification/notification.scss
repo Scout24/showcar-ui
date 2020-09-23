@@ -1,20 +1,20 @@
 @import '../../../01-settings/variables';
 
 $notification-success: $black-100;
-$notification-success-border: #00D0B2;
-$notification-success-background: #CCFFE2;
+$notification-success-border: $success-100;
+$notification-success-background: $success-20;
 
 $notification-info: $black-100;
-$notification-info-border: #F2CA26;
-$notification-info-background: #FEF9D3;
+$notification-info-border: $warning-100;
+$notification-info-background: $warning-20;
 
 $notification-error: $black-100;
-$notification-error-border: #E74B3C;
-$notification-error-background: #FDE7D8;
+$notification-error-border: $error-100;
+$notification-error-background: $error-20;
 
 $notification-tip: $black-100;
-$notification-tip-border: #237FFF;
-$notification-tip-background: #D3ECFF;
+$notification-tip-border: $info-100;
+$notification-tip-background: $info-20;
 
 $types: (
   'success': (
