@@ -9,7 +9,6 @@ fail() {
   exit 1
 }
 
-
 prepare_assets() {
     echo "Preparing assets with ${ASSET_PATH}"
 

@@ -30,7 +30,6 @@ cp ../package.json .
 cp ../README.md .
 cp ../LICENSE.md .
 cp ../Jenkinsfile .
-cp ../Jenkinsfile.mig .
 
 git add . -A
 

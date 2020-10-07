@@ -55,12 +55,12 @@ pipeline {
         BRANCH="${env.BRANCH_NAME}"
       }
 
-      agent { node { label 'deploy-as24dev' } }
+      agent { node { label 'deploy-as24assets' } }
 
       steps {
         unstash 'output-dev-dist'
         sh './deploy/deploy.sh'
-        slackSend channel: 'as24_acq_cxp_fizz', color: '#00FF00', message: "Showcar-UI :branch: ${env.BRANCH_NAME} is deployed, check it with toggle `?sc_branch=${env.BRANCH_NAME}`"
+        slackSend channel: 'ug-activation-alerts', color: '#00FF00', message: "Showcar-UI :branch: ${env.BRANCH_NAME} is deployed, check it with toggle `?sc_branch=${env.BRANCH_NAME}`"
       }
     }
 
@@ -96,7 +96,7 @@ pipeline {
          BRANCH='master'
       }
 
-      agent { node { label 'deploy-as24dev' } }
+      agent { node { label 'deploy-as24assets' } }
       steps {
         unstash 'output-prod-dist'
         sh './deploy/deploy.sh'
