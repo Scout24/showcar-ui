@@ -41,7 +41,6 @@ const whiteList = [
     'noauth',
     'random',
     'as24ArticleType',
-    'page-views-feed',
     'last-search-feed',
     'home-feed-bucket',
     'home-feed-location',
