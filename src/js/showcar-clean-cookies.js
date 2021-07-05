@@ -60,7 +60,14 @@ const whiteList = [
 ];
 
 const deleteCookieByName = function(cookie) {
-    document.cookie = cookie + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    const domainParts = location.hostname.split('.');
+
+    document.cookie = `${cookie}=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
+
+    while (domainParts.length > 0) {
+        document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=${domainParts.join('.')}; path=/;`;
+        domainParts.shift();
+    }
 };
 
 const getCookieName = function(cookie) {
